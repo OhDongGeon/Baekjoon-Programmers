@@ -6,9 +6,14 @@ class Solution {
         ArrayList<Integer> arr = new ArrayList();
         int cnt = 0;
         
-        for(int i = 1; i <= n; i++){
+        for(int i = 1; i <= Math.sqrt(n); i++){
             if (n % i == 0) {
-                arr.add(i);
+                if (Math.pow(i, 2) == n) {
+                    arr.add(i);
+                } else {
+                    arr.add(i);
+                    arr.add(n / i);
+                }
             }
         }
 
