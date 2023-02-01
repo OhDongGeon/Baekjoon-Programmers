@@ -1,7 +1,7 @@
 class Solution {
     public int cnt(int sum) {
-       for(int i = 1; i * i <= sum; i++) {
-            if(sum % i == 0 && i != 1 && i != sum) {
+       for(int i = 2; i * i <= sum; i++) {
+            if(sum % i == 0) {
                 return 0;
             }
         }
