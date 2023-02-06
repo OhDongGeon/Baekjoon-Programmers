@@ -1,14 +1,14 @@
 class Solution {
     int cnt = 0;
     
-    public void TargetNumber(int[] numbers, int target, int depth, int sum) {
-        if(depth == numbers.length) {
+    public void TargetNumber(int[] numbers, int target, int i, int sum) {
+        if(i == numbers.length) {
             if(target == sum) {
                 cnt++;
             }
         } else {
-            TargetNumber(numbers, target, depth + 1, sum + numbers[depth]);
-            TargetNumber(numbers, target, depth + 1, sum - numbers[depth]);  
+            TargetNumber(numbers, target, i + 1, sum + numbers[i]);
+            TargetNumber(numbers, target, i + 1, sum - numbers[i]);  
         }
     }
     
