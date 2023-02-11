@@ -19,12 +19,17 @@ class Solution {
             }
         }
         
-        
-        for(Map.Entry<Integer, Integer> item : hm.entrySet()) {
-            if(item.getKey() != max_Key && item.getValue() == max){
+        for(int item : hm.keySet()) {
+            if(item != max_Key && hm.get(item) == max){
                 return -1;
-            }
+            }          
         }
+        
+        // for(Map.Entry<Integer, Integer> item : hm.entrySet()) {
+        //     if(item.getKey() != max_Key && item.getValue() == max){
+        //         return -1;
+        //     }
+        // }
         
         
         
