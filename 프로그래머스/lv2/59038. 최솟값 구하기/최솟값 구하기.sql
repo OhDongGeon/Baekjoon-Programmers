@@ -1,0 +1,3 @@
+-- 코드를 입력하세요
+    SELECT MIN(DATETIME) TIME
+      FROM ANIMAL_INS
