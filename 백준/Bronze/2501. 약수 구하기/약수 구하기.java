@@ -7,12 +7,11 @@ public class Main {
         int K = sc.nextInt();
         sc.close();
         int answer = 0;
-        int chk = 0;
         
         for (int i = 1; i <= N; i++) {
             if (N % i == 0) {
-                chk++;
-                if (K == chk) {
+                K--;
+                if (K == 0) {
                     answer = i;
                     break;
                 }
