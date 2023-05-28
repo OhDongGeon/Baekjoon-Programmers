@@ -35,8 +35,6 @@ class Solution {
 }
 
 
-
-
 // class Solution {
 //     public String map(int num, int length) {
 //         String binary = "";
