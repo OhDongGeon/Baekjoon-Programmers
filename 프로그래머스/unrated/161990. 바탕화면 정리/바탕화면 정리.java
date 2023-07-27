@@ -13,7 +13,7 @@ class Solution {
         int lastRow = 0;
         int lastCol = 0;
         
-        for (int i = 0; i < wallpaper.length; i++) {
+        for (int i = 0; i < arr.size(); i++) {
             if (arr.get(i).contains("#")) {
                 firstRow = Math.min(firstRow, i);
                 firstCol = Math.min(firstCol, arr.get(i).indexOf("#"));
