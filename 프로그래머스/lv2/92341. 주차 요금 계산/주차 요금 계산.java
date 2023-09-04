@@ -9,7 +9,6 @@ class Solution {
             String[] car = records[i].split(" ");
             String[] minute = car[0].split(":");
             int time = 0;
-
             time += Integer.parseInt(minute[0]) * 60;
             time += Integer.parseInt(minute[1]);
             
@@ -59,9 +58,11 @@ class Solution {
                 cost.put(item, basicsfees);
             } else {
                 priceMinute -= basicsMinute;
-                priceMinute = priceMinute % unitMinute == 0 ? 
-                    priceMinute / unitMinute : priceMinute / unitMinute + 1;
-                cost.put(item,  basicsfees + priceMinute * unitfees);
+                
+                // priceMinute = priceMinute % unitMinute == 0 ? 
+                //     priceMinute / unitMinute : priceMinute / unitMinute + 1;
+                
+                cost.put(item,  basicsfees + (int)Math.ceil(priceMinute / (double)unitMinute) * unitfees);
             }
         }
         
