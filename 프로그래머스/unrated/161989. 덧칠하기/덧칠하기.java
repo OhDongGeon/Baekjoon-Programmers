@@ -1,23 +1,12 @@
 class Solution {
     public int solution(int n, int m, int[] section) {
-        int answer = 0;
-        boolean[] paint = new boolean[n];
+        int answer = 1;
+        int paint = section[0];
         
         for (int i = 0; i < section.length; i++) {
-            paint[section[i] - 1] = true;
-        }
-        
-        for (int i = 0; i < paint.length; i++) {
-            
-            if (paint[i]) {
+            if (paint + m - 1 < section[i]) {
+                paint = section[i];
                 answer++;
-                
-                for (int j = 0; j < m; j++) {
-                    paint[i + j] = false;
-                    if (paint.length - 1 <= i + j) {
-                        break;
-                    }
-                }
             }
         }
         
