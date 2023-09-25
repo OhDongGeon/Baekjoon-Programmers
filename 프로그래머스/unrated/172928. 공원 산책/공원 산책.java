@@ -11,31 +11,32 @@ class Solution {
         }
         
         for (int i = 0; i < routes.length; i++) {
-            String[] move = routes[i].split(" ");
-            String EWSN = move[0];
-            int distance = Integer.parseInt(move[1]);
-            int locationY = answer[0];
-            int locationX = answer[1];
+            String[] ewns = routes[i].split(" ");
+            String location = ewns[0];
+            int move = Integer.parseInt(ewns[1]);
+            int x = answer[1];
+            int y = answer[0];
             
-            for (int j = 0; j < distance; j++) {
-                if (EWSN.equals("E")) {
-                    locationX++;
-                } else if (EWSN.equals("W")) {
-                    locationX--;
-                } else if (EWSN.equals("S")) {
-                    locationY++;
+            for (int j = 0; j < move; j++) {
+                if (location.equals("E")) {
+                    x++;
+                } else if (location.equals("W")) {
+                    x--;
+                } else if (location.equals("N")) {
+                    y--;
                 } else {
-                    locationY--;
+                    y++;
                 }
                 
-                if (locationX >= 0 && locationX < park[0].length() && locationY >= 0 && locationY < park.length) {
-                    if (park[locationY].charAt(locationX) == 'X') {
+                if (x >= 0 && x < park[0].length() && y >= 0 && y < park.length) {
+                    if (park[y].charAt(x) == 'X') {
                         break;
                     }
-                    if (j == distance - 1) {
-                        answer[0] = locationY;
-                        answer[1] = locationX; 
-                    } 
+                    
+                    if (j == move - 1) {
+                        answer[0] = y;
+                        answer[1] = x;
+                    }
                 }
             }
         }
