@@ -34,12 +34,10 @@ class Solution {
         
         // 양이 늑대의 수와 같거나 작으면 잡아 먹힌다!
         if (sheepCnt <= wolfCnt) {
-            // 현재 방문하고 있는 노드
             return;
         }
         
         for (int i = 0; i < edgesCopy.length; i++) {
-
             if (visited[edgesCopy[i][0]] && !visited[edgesCopy[i][1]]) {
                 dfs(visited, edgesCopy[i][1], sheepCnt, wolfCnt);
                 visited[edgesCopy[i][1]] = false;
