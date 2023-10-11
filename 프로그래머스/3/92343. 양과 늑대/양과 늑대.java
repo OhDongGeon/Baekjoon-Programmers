@@ -41,6 +41,11 @@ class Solution {
             if (visited[edgesCopy[i][0]] && !visited[edgesCopy[i][1]]) {
                 dfs(visited, edgesCopy[i][1], sheepCnt, wolfCnt);
                 visited[edgesCopy[i][1]] = false;
+                
+                // 전체 노드가 양일 경우
+                if (maxSheep == infoCopy.length) {
+                    return;
+                }
             }
         }
     }
