@@ -2,10 +2,10 @@ import java.util.*;
 
 class Solution {
     
-    boolean[] visited;
-    int[] infoCopy;
-    int[][] edgesCopy;
-    int maxSheep = 0;
+    static boolean[] visited;
+    static int[] infoCopy;
+    static int[][] edgesCopy;
+    static int maxSheep = 0;
     
     public int solution(int[] info, int[][] edges) {
 
@@ -13,14 +13,14 @@ class Solution {
         infoCopy = info;
         edgesCopy = edges;
         
-        // dfs (방문체크, 방문할 노드, 양의수, 늑대수)
-        dfs(visited, 0, 0, 0);
+        // dfs (방문할 노드, 양의수, 늑대수)
+        dfs(0, 0, 0);
         
         return maxSheep;
     }
     
     
-    public void dfs (boolean[] visited, int nextNode, int sheepCnt, int wolfCnt) {
+    public static void dfs (int nextNode, int sheepCnt, int wolfCnt) {
         visited[nextNode] = true;
         
         // 다음 방문할 노트가 양이면 양의 수 증가 아니면 늑대의 수 증가
@@ -39,7 +39,7 @@ class Solution {
         
         for (int i = 0; i < edgesCopy.length; i++) {
             if (visited[edgesCopy[i][0]] && !visited[edgesCopy[i][1]]) {
-                dfs(visited, edgesCopy[i][1], sheepCnt, wolfCnt);
+                dfs(edgesCopy[i][1], sheepCnt, wolfCnt);
                 visited[edgesCopy[i][1]] = false;
                 
                 // 전체 노드가 양일 경우
