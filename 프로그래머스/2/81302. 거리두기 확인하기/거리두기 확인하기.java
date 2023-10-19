@@ -5,7 +5,6 @@ class Solution {
     static char[][] place;
     static boolean[][] visited;
     static int value = 1;
-    static int test = 0;
 
     public int[] solution(String[][] places) {
         
@@ -15,7 +14,7 @@ class Solution {
             
             place = new char[5][5];
             visited = new boolean[5][5];
-            test  = i ;
+
             for (int j = 0; j < places[i].length; j++) {
                 place[j] = places[i][j].toCharArray();
             }
