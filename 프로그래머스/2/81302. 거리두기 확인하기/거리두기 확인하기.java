@@ -46,7 +46,7 @@ class Solution {
         }
         
         visited[row][col] = true;
-        System.out.println();
+        
         for (int i = 0; i < 4; i++) {
             int moveY = row + y[i]; // 상하
             int moveX = col + x[i]; // 좌우
