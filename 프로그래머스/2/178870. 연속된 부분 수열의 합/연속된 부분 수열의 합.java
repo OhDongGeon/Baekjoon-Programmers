@@ -16,10 +16,11 @@ class Solution {
             }
             
             if (sum == k) {    
-                if (pre > first - second) {
+                int minus = first - second;
+                if (pre > minus) {
                     answer[0] = second;
                     answer[1] = first - 1;
-                    pre = first - second;
+                    pre = minus;
                 }
             }
         }
