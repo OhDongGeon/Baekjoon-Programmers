@@ -1,30 +1,42 @@
+import java.util.*;
 class Solution {
     public int[] solution(int[] sequence, int k) {
-        
         int[] answer = new int[2];
+        Queue<Integer> q = new LinkedList<>();
         int sum = 0;
-        int first = 0;
-        int second = 0;
-        int length = sequence.length;
-        int pre = Integer.MAX_VALUE;
-        
-        while (second != length) {
-            if (sum > k || first == length) {
-                sum -= sequence[second++];
-            } else {
-                sum += sequence[first++];
+        int idx = 0;
+        int len = 1000000;
+        for (int i = 0; i < sequence.length; i++) {
+            if (sequence[i] == k) {
+                answer[0] = i;
+                answer[1] = i;
+                break;
             }
-            
-            if (sum == k) {    
-                int minus = first - second;
-                if (pre > minus) {
-                    answer[0] = second;
-                    answer[1] = first - 1;
-                    pre = minus;
+
+            q.add(sequence[i]);
+            sum += sequence[i];
+
+            if (sum == k) {
+                answer[0] = idx;
+                answer[1] = i;
+                len = i - idx;
+            } else if (sum > k) {
+                int tmp = 0;
+                while (sum > k) {
+                    tmp = q.poll();
+                    sum -= tmp;
+                    idx++;
+
+                    if (sum == k && i - idx < len) {
+                        answer[0] = idx;
+                        answer[1] = i;
+                        len = i - idx;
+                        break;
+                    }
                 }
             }
         }
-        
+
         return answer;
     }
 }
