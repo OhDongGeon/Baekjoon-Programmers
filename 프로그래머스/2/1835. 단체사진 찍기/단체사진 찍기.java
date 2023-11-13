@@ -6,8 +6,8 @@ class Solution {
     static int answer;
     
     public int solution(int n, String[] data) {
-        answer = 0;
         dataCopy = data;
+        answer = 0;
         
         dfs(0, "");
         
