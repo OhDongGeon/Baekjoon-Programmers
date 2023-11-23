@@ -20,9 +20,8 @@ class Solution
                     int left = plusBoard[i][j - 1];
                     int topleft = plusBoard[i - 1][j - 1];
                     
-                    int minValue = Math.min(Math.min(top, left), topleft) + 1;
-                    plusBoard[i][j] = minValue;
-                    answer = Math.max(answer, minValue);
+                    plusBoard[i][j] = Math.min(Math.min(top, left), topleft) + 1;
+                    answer = Math.max(answer, plusBoard[i][j]);
                 }
             }
         }
