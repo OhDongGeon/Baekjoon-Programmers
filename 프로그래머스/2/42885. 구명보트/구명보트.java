@@ -11,12 +11,13 @@ class Solution {
             
             if (i < idx) {
                 break;
-            } else if (people[i] + people[idx] <= limit) {
-                answer++;
+            } 
+            
+            if (people[i] + people[idx] <= limit) {
                 idx++;
-            } else {
-                answer++;
-            }
+            } 
+            
+            answer++;
         }
         
         return answer;
