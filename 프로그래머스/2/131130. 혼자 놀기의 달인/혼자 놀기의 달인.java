@@ -23,7 +23,7 @@ class Solution {
         
         for (int i = 0; i < cardLength; i++) {
             if (!visited[i]) {
-                open(cards[i] - 1, 0);
+                box(cards[i] - 1, 0);
             }
         }
         
@@ -38,14 +38,14 @@ class Solution {
     }
     
     
-    public void open (int cardLocation, int cnt) {
+    public void box (int cardLocation, int cnt) {
         if (visited[cardLocation]) {
             arr.add(cnt);
             return;
         }
         
         visited[cardLocation] = true;
-        open(cardsCopy[cardLocation] -1, cnt + 1);
+        box(cardsCopy[cardLocation] -1, cnt + 1);
     }
 }
 
