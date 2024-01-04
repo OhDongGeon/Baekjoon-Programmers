@@ -10,9 +10,7 @@ public class Main {
         dp[4] = true;
         
         for (int i = 5; i <= N; i++) {
-            if (dp[i - 1] && dp[i - 3] && dp[i - 4]) {
-                dp[i] = false;
-            } else {
+            if (!dp[i - 1] || !dp[i - 3] || !dp[i - 4]) {
                 dp[i] = true;
             }
         }
