@@ -20,15 +20,11 @@ public class Main {
             map.remove(Integer.parseInt(st.nextToken()));
         }
 
-        if (map.size() == 0) {
-            System.out.println(0);
-        } else {
-            System.out.println(map.size());
-            StringBuilder sb = new StringBuilder();
-            for (Integer item : map.keySet()) {
-                sb.append(item).append(" ");
-            }
-            System.out.println(sb);
+        System.out.println(map.size());
+        StringBuilder sb = new StringBuilder();
+        for (Integer item : map.keySet()) {
+            sb.append(item).append(" ");
         }
+        System.out.println(sb);
     }
 }
