@@ -7,8 +7,7 @@ class Solution {
         
         for (int i = 0; i < babbling.length; i++) {
             for (int j = 0; j < pronunciation.length; j++) {
-                babbling[i] = babbling[i].replace(overlap[j], "1");
-                babbling[i] = babbling[i].replace(pronunciation[j], " ");
+                babbling[i] = babbling[i].replace(overlap[j], "1").replace(pronunciation[j], " ");
             }
         }
         
