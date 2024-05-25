@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int solution(String[] friends, String[] gifts) {
         
-                int friendsLength = friends.length;
+        int friendsLength = friends.length;
         int[][] exchange = new int[friendsLength][friendsLength];
         int[] giftIndex = new int[friendsLength];
         int[] value = new int[friendsLength];
