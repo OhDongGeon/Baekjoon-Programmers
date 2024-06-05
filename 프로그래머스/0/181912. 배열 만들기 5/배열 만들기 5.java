@@ -6,20 +6,13 @@ class Solution {
         ArrayList<Integer> arr = new ArrayList<>();
         
         for (int i = 0; i < intStrs.length; i++) {
-            String[] strs = intStrs[i].split("");
-            String num = ""; 
-                
-            for (int j = s; j < s + l; j++) {
-                num += strs[j];
-            }
+            int num = Integer.parseInt(intStrs[i].substring(s, s + l));
             
-            int number = Integer.parseInt(num);
-            
-            if (k < number) {
-                arr.add(number);
+            if (num > k) {
+                arr.add(num);
             }
         }
-        
+
         int[] answer = new int[arr.size()];
         
         for (int i = 0; i < arr.size(); i++) {
