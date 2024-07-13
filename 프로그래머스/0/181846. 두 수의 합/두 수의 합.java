@@ -23,10 +23,11 @@ class Solution {
                 sum += b.charAt(blen--) - '0';
             }
             
-            answer.append(sum % 10);
+            answer.insert(0, sum % 10);
             over = sum / 10;
         }
         
-        return answer.reverse().toString();
+        
+        return answer.toString();
     }
 }
