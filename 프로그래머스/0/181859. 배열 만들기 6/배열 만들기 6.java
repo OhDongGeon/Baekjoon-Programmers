@@ -6,12 +6,10 @@ class Solution {
         Stack<Integer> stk = new Stack<>();
         
         for (int i = 0; i < arr.length; i++) {
-            if (stk.isEmpty()) {
+            if (stk.isEmpty() || (!stk.isEmpty() && stk.peek() != arr[i])) {
                 stk.push(arr[i]);
             } else if (stk.peek() == arr[i]) {
                 stk.pop();
-            } else {
-                stk.push(arr[i]);
             }
         }
         if (stk.isEmpty()) {
