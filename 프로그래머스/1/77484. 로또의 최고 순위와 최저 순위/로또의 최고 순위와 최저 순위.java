@@ -19,8 +19,8 @@ class Solution {
             }
         }
         
-        answer[0] = Math.abs(lucky + zero - 7)  == 7 ? 6 : Math.abs(lucky + zero - 7);
-        answer[1] = Math.abs(lucky - 7) == 7 ? 6 : Math.abs(lucky - 7);
+        answer[0] = 7 - lucky - zero == 7 ? 6 : 7 - lucky - zero;
+        answer[1] = 7 - lucky == 7 ? 6 : 7 - lucky;
     
         return answer;
     }
