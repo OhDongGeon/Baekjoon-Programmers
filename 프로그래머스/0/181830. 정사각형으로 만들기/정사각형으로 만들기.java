@@ -1,17 +1,10 @@
 class Solution {
     public int[][] solution(int[][] arr) {
         
-        int width = arr[0].length;
-        int height = arr.length;
-        int[][] answer = new int [height][height];
+        int maxSize = Math.max(arr.length, arr[0].length);
+        int[][] answer = new int [maxSize][maxSize];
         
-        if (height < width) {
-            answer = new int[width][width];
-        } else if (height > width) {
-            answer = new int[height][height];
-        }
-        
-        for (int i = 0; i < height; i ++) {
+        for (int i = 0; i < arr.length; i ++) {
             for (int j = 0; j < arr[i].length; j++) {
                 answer[i][j] = arr[i][j];
             }
