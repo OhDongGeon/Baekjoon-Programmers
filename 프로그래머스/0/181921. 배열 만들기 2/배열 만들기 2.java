@@ -19,6 +19,6 @@ class Solution {
             }
         }
         
-        return list.size() == 0 ? new int[] {-1} : list.stream().mapToInt(Integer::intValue).toArray();
+        return list.isEmpty() ? new int[] {-1} : list.stream().mapToInt(Integer::intValue).toArray();
     }
 }
