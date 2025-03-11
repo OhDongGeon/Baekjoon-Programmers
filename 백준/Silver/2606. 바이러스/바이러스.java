@@ -24,14 +24,14 @@ public class Main {
         
         visited = new boolean[computer + 1];
         answer = 0;
-        bfs();
+        bfs(1);
         
         System.out.println(answer == 0 ? 0 : --answer);
     }
     
-    static void bfs() {
-        queue.add(1);
-        visited[1] = true;
+    static void bfs(int start) {
+        queue.add(start);
+        visited[start] = true;
         
         while (!queue.isEmpty()) {
             int num = queue.poll();
