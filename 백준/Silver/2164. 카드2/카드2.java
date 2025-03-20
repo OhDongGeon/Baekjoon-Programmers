@@ -13,8 +13,7 @@ public class Main {
         
         while (dq.size() != 1) {
             dq.remove();
-            int num = dq.remove();
-            dq.addLast(num);
+            dq.addLast(dq.remove());
         }
         
         System.out.println(dq.peek());
