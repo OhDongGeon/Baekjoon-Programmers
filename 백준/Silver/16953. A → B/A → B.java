@@ -2,31 +2,25 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    
-    static int B, answer = Integer.MAX_VALUE;
-    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         
-        long A = Long.parseLong(st.nextToken());
-        B = Integer.parseInt(st.nextToken());
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        int answer = 1;
         
-        dfs(1, A);
-        
-        System.out.println(answer == Integer.MAX_VALUE ? -1 : answer);
-    }
-    
-    static void dfs(int cnt, long start) {
-        
-        if (start >= B) {
-            if (start == B) {
-                answer = Math.min(answer, cnt);
+        while (A < B) {
+            if (B % 2 == 0) {
+                B /= 2;
+            } else if (B % 10 == 1) {
+                B /= 10;
+            } else {
+                break;
             }
-            return;
+            answer++;
         }
         
-        dfs(cnt + 1, start * 2);
-        dfs(cnt + 1, start * 10 + 1);
+        System.out.println(A == B ? answer : -1);
     }
 }
